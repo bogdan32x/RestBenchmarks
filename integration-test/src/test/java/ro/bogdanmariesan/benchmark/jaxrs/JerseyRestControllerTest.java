@@ -1,4 +1,4 @@
-package ro.bogdanmariesan.benchmark.spring;
+package ro.bogdanmariesan.benchmark.jaxrs;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import ro.bogdanmariesan.benchmark.BaseRestTest;
+import ro.bogdanmariesan.benchmark.spring.SpringTestConfig;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -19,13 +20,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * Created by bogdan.mariesan on 1/26/2015.
+ * Created by batman on 26.01.2015.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {SpringTestConfig.class})
 @WebAppConfiguration
-public class SpringRestControllerTest extends BaseRestTest {
-
+public class JerseyRestControllerTest extends BaseRestTest {
 
     private MockMvc mockMvc;
 
@@ -58,6 +58,5 @@ public class SpringRestControllerTest extends BaseRestTest {
         System.out.println("Total execution time in milliseconds: " + totalExecutionTime.doubleValue());
         System.out.println("Average execution time in milliseconds: " + totalExecutionTime.doubleValue() / HALF_MILLION_REQUESTS);
     }
-
 
 }
