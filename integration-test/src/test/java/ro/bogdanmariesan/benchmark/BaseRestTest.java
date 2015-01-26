@@ -17,7 +17,7 @@ public class BaseRestTest {
 
     protected static final int FOUR_USERS = 4;
     protected static final int HALF_MILLION_REQUESTS = 500000;
-    protected static AtomicLong totalExecutionTime = new AtomicLong(0);
+    protected static final AtomicLong totalExecutionTime = new AtomicLong(0);
 
     protected void benchmarkGetRequest(final MockMvc mockMvc) throws Exception {
 
@@ -35,9 +35,9 @@ public class BaseRestTest {
         totalExecutionTime.addAndGet(duration);
     }
 
-    protected void benchmarkGetRequest(final int numberOfusers, final int numberOfRequests, final MockMvc mockMvc) throws InterruptedException {
+    protected void benchmarkGetRequest(final int numberOfUsers, final int numberOfRequests, final MockMvc mockMvc) throws InterruptedException {
         final CountDownLatch latch = new CountDownLatch(numberOfRequests);
-        final ExecutorService executorService = Executors.newFixedThreadPool(numberOfusers);
+        final ExecutorService executorService = Executors.newFixedThreadPool(numberOfUsers);
 
         for (int i = 0; i < numberOfRequests; i++) {
             executorService.execute(new Runnable() {

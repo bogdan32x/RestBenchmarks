@@ -10,7 +10,6 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>ro.bogdanmariesan</groupId>
     <artifactId>integration-test</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
@@ -21,12 +20,14 @@
             <groupId>ro.bogdanmariesan</groupId>
             <artifactId>spring</artifactId>
             <version>${project.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>ro.bogdanmariesan</groupId>
             <artifactId>jaxrs</artifactId>
             <version>${project.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- Test dependencies-->

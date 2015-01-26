@@ -55,8 +55,8 @@ public class JerseyRestControllerTest extends BaseRestTest {
     @Test
     public void performanceSuiteFourUsersHalfMillionRequests() throws InterruptedException {
         benchmarkGetRequest(FOUR_USERS, HALF_MILLION_REQUESTS, mockMvc);
-        System.out.println("Total execution time in milliseconds: " + totalExecutionTime.doubleValue());
-        System.out.println("Average execution time in milliseconds: " + totalExecutionTime.doubleValue() / HALF_MILLION_REQUESTS);
+        System.out.println("JAX-RS total execution time in milliseconds: " + totalExecutionTime.doubleValue());
+        System.out.println("JAX-RS average execution time in milliseconds: " + totalExecutionTime.doubleValue() / HALF_MILLION_REQUESTS);
     }
 
 }
